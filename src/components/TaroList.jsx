@@ -42,5 +42,4 @@ function TaroList({ items }) {
 TaroList.propTypes = {
   items: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
-
 export default TaroList
