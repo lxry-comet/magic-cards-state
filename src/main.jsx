@@ -5,7 +5,7 @@ import App from './App'
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
-		<BrowserRouter basename='/magic-cards-vanillacss'>
+		<BrowserRouter basename='/magic-cards-modulecss'>
 			<App />
 		</BrowserRouter>
 	</StrictMode>

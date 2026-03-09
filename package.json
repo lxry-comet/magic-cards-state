@@ -1,12 +1,12 @@
 {
-  "name": "magic-cards-vanillacss",
-  "homepage": "https://lxry-comet.github.io/magic-cards-vanillacss",
+  "name": "magic-cards-modulecss",
+  "homepage": "https://lxry-comet.github.io/magic-cards-modulecss",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/magic-cards-vanillacss/",
+    "build": "vite build --base=/magic-cards-modulecss/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
