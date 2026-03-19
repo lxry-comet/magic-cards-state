@@ -1,7 +1,8 @@
-import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import taro from '../../json/taro.json'
 import { getBorderColor } from '../../utils/getBorderColor'
+import { Item, ItemContainer, ItemText, List } from './TaroList.styled.jsx'
+
 import Taro from '../Taro/Taro'
 import css from './TaroList.module.css'
 
@@ -13,18 +14,17 @@ function TaroList({ items }) {
 			(taro && (taro.cards || (taro.tarot_deck && items.tarot_deck.cards))) ||
 			[]
 
-	if (!cards.length) return <p className={css.itemText}>No cards to display</p>
+	if (!cards.length)
+		return <ItemText className={css.itemText}>No cards to display</ItemText>
 
 	return (
 		<>
-			<ul className={css.list}>
-				{cards.map(card => (
-					<li className={css.item} key={card.id}>
-						<div
-							className={clsx(
-								css.itemContainer,
-								css[getBorderColor(cards.indexOf(card))]
-							)}
+			<List className={css.list}>
+				{cards.map((card, index) => (
+					<Item className={css.item} key={card.id}>
+						<ItemContainer
+							className={css.itemContainer}
+							borderColor={getBorderColor(index)}
 						>
 							<Taro
 								id={card.id}
@@ -36,10 +36,10 @@ function TaroList({ items }) {
 								interpretation={card.interpretation}
 								imageUrl={card.imageUrl}
 							/>
-						</div>
-					</li>
+						</ItemContainer>
+					</Item>
 				))}
-			</ul>
+			</List>
 		</>
 	)
 }

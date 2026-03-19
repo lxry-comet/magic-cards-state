@@ -1,16 +1,19 @@
 {
-  "name": "magic-cards-modulecss",
-  "homepage": "https://lxry-comet.github.io/magic-cards-modulecss",
+  "name": "magic-cards-emotioncss",
+  "homepage": "https://lxry-comet.github.io/magic-cards-emotioncss",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/magic-cards-modulecss/",
+    "build": "vite build --base=/magic-cards-emotioncss/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "clsx": "^2.1.1",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",

@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Global, Title} from './Section.styled.jsx';
+
+
 import css from "./Section.module.css"; 
 
 function Section({ title, children }) {
   return (
-    <section className={css.section}
-    >
-      {/* <h2>{title}</h2> */}
-      {/* //! Рендер за умовою: */}
-      {title && <h2 className={css.title}
-      >{title}</h2>} 
+    <Global>
+      {title && <Title>{title}</Title>}
       {children}
-    </section>
+    </Global>
   );
 }
 Section.propTypes = {

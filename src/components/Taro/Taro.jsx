@@ -1,4 +1,13 @@
+import {CardContainer,
+ItemTitle,
+ItemImage,
+ItemInter,
+ItemButton} from './Taro.styled.jsx';
+
+
 import css from "./Taro.module.css"; 
+
+
 export default function Taro({
   name,
   id,
@@ -8,8 +17,8 @@ export default function Taro({
   imageUrl 
 }) {
   return (
-    <div className={css.cardContainer}>
-      <h2 className={css.itemTitle}>{name} (№{id})</h2>
+    <CardContainer className={css.cardContainer}>
+      <ItemTitle className={css.itemTitle}>{name} (№{id})</ItemTitle>
       
       {/* Якщо у тебе будуть зображення карт */}
       {imageUrl && <img className={css.itemImage}
@@ -22,11 +31,11 @@ export default function Taro({
       </div> */}
       
       <>
-        <p className={css.itemInter}><strong>Інтерпретація:</strong> {interpretation}</p>
+        <ItemInter className={css.itemInter}><strong>Інтерпретація:</strong> {interpretation}</ItemInter>
       </>
     
       <br />
-      <button className={css.itemButton}
+      <ItemButton className={css.itemButton}
   onMouseEnter={(e) => {
     e.target.style.backgroundColor = '#d4af37';
     e.target.style.color = '#000';
@@ -37,7 +46,7 @@ export default function Taro({
   }}
 >
   Обрати карту
-</button>
-    </div> 
+</ItemButton>
+    </CardContainer> 
   );
 }

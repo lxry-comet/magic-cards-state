@@ -1,6 +1,6 @@
-/*кожні 26 карток змінюється колір*/
-/* 
-.cardContainer{
+import styled from '@emotion/styled';
+
+export const CardContainer = styled.div`
 	    display: flex; 
       flex-direction: column; 
       align-items: center; 
@@ -8,19 +8,21 @@
       padding: 20px; 
       height: 100%;
       border-radius: 8px;
-}
-.itemTitle{
+`;
+
+export const ItemTitle = styled.h2`
 	margin-bottom: 10px;
-}
-.itemImage{
+`;
+
+export const ItemImage = styled.img`
 	text-align: center; 
 	width: 200px;
-}
-.itemInter{
+	`;
+export const ItemInter = styled.p`
 	margin-top: 15px;
 	color: #d4af37;
-}
-.itemButton{
+`;
+export const ItemButton = styled.button`
 	  margin-top: 20px;
   padding: 12px 24px;
   background-color: transparent;
@@ -35,4 +37,4 @@
   transition: 0.3s;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
   width: '100%'
-} */
+`;
