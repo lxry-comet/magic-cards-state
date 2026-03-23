@@ -4,7 +4,6 @@ import { getBorderColor } from '../../utils/getBorderColor'
 import { Item, ItemContainer, ItemText, List } from './TaroList.styled.jsx'
 
 import Taro from '../Taro/Taro'
-import css from './TaroList.module.css'
 
 function TaroList({ items }) {
 	const cards = Array.isArray(items)
@@ -15,15 +14,14 @@ function TaroList({ items }) {
 			[]
 
 	if (!cards.length)
-		return <ItemText className={css.itemText}>No cards to display</ItemText>
+		return <ItemText>No cards to display</ItemText>
 
 	return (
 		<>
-			<List className={css.list}>
+			<List>
 				{cards.map((card, index) => (
-					<Item className={css.item} key={card.id}>
+					<Item key={card.id}>
 						<ItemContainer
-							className={css.itemContainer}
 							borderColor={getBorderColor(index)}
 						>
 							<Taro

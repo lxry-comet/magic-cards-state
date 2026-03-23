@@ -1,9 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import {Global, Title} from './Section.styled.jsx';
-
-
-import css from "./Section.module.css"; 
 
 function Section({ title, children }) {
   return (

@@ -5,9 +5,6 @@ ItemInter,
 ItemButton} from './Taro.styled.jsx';
 
 
-import css from "./Taro.module.css"; 
-
-
 export default function Taro({
   name,
   id,
@@ -17,25 +14,16 @@ export default function Taro({
   imageUrl 
 }) {
   return (
-    <CardContainer className={css.cardContainer}>
-      <ItemTitle className={css.itemTitle}>{name} (№{id})</ItemTitle>
-      
-      {/* Якщо у тебе будуть зображення карт */}
-      {imageUrl && <img className={css.itemImage}
-       src={imageUrl} alt={name} />}
-      
-      {/* <p><strong>Символіка:</strong> {suite}</p> */}
-      
-      {/* <div style={{ color: "#ffffff" }}>
-        <p><strong>Опис:</strong> {description}</p>
-      </div> */}
-      
+    <CardContainer>
+      <ItemTitle>{name} (№{id})</ItemTitle>
+      {imageUrl && <ItemImage
+       src={imageUrl} alt={name} />} 
       <>
-        <ItemInter className={css.itemInter}><strong>Інтерпретація:</strong> {interpretation}</ItemInter>
+        <ItemInter><strong>Інтерпретація:</strong> {interpretation}</ItemInter>
       </>
     
       <br />
-      <ItemButton className={css.itemButton}
+      <ItemButton
   onMouseEnter={(e) => {
     e.target.style.backgroundColor = '#d4af37';
     e.target.style.color = '#000';
