@@ -1,12 +1,12 @@
 {
-  "name": "magic-cards-emotioncss",
-  "homepage": "https://lxry-comet.github.io/magic-cards-emotioncss",
+  "name": "magic-cards-state",
+  "homepage": "https://lxry-comet.github.io/magic-cards-state",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/magic-cards-emotioncss/",
+    "build": "vite build --base=/magic-cards-state/",
     "lint": "eslint .",
     "preview": "vite preview"
   },

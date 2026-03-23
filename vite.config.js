@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/magic-cards-emotioncss/', //! <-- ім'я репозиторію
+  base: '/magic-cards-state/', //! <-- ім'я репозиторію
 });
