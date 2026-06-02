@@ -1,47 +1,43 @@
-import {FilterBox, Button} from './Filter.styled.jsx'
+import { Button, FilterBox } from './Filter.styled.jsx'
 
-export function Filter({ All, Major, Wands, Cups, Swords, Pentacles }) {
+export function Filter({
+	All,
+	Major,
+	Wands,
+	Cups,
+	Swords,
+	Pentacles,
+	cartFiltration,
+	shopFiltration
+}) {
 	return (
 		<FilterBox>
 			<Button type='button' onClick={All}>
-				ВСІ
+				All
 			</Button>
 
-			<Button
-				
-				type='button'
-				onClick={Major}
-			>
+			<Button type='button' onClick={Major}>
 				Major
 			</Button>
 
-			<Button
-				
-				type='button'
-				onClick={Wands}
-			>
+			<Button type='button' onClick={Wands}>
 				Wands
 			</Button>
-			<Button
-				
-				type='button'
-				onClick={Cups}
-			>
+			<Button type='button' onClick={Cups}>
 				Cups
 			</Button>
-			<Button
-				
-				type='button'
-				onClick={Swords}
-			>
+			<Button type='button' onClick={Swords}>
 				Swords
 			</Button>
 
-			<Button
-				type='button'
-				onClick={Pentacles}
-			>
+			<Button type='button' onClick={Pentacles}>
 				Pentacles
+			</Button>
+			<Button type='button' onClick={shopFiltration}>
+				Shop
+			</Button>
+			<Button type='button' onClick={cartFiltration}>
+				Cart
 			</Button>
 		</FilterBox>
 	)

@@ -1,0 +1,73 @@
+{
+	"shop": {
+		"name": "Mystic Corner - Tarot Card Shop",
+		"api_version": "1.0",
+		"currency": "PLN",
+		"products": [
+			{
+				"id": "tarot-001",
+				"name": "Classic Rider-Waite Tarot Deck",
+				"author": "Arthur Edward Waite & Pamela Colman Smith",
+				"price": 89.99,
+				"category": "Traditional",
+				"stock": 42,
+				"description": "The most popular tarot deck in the world. Great for beginners due to its clear, intuitive symbolism.",
+				"specification": {
+					"cards_count": 78,
+					"card_dimensions_mm": "70x120",
+					"instruction_language": "Polish"
+				},
+				"tags": ["bestseller", "for beginners", "classic"],
+				"available": true
+			},
+			{
+				"id": "tarot-002",
+				"name": "The Light Seer's Tarot",
+				"author": "Chris-Anne",
+				"price": 134.5,
+				"category": "Modern",
+				"stock": 15,
+				"description": "A contemporary deck full of light and healing energy. It breaks traditional archetypes by introducing modern, life-like scenes.",
+				"specification": {
+					"cards_count": 78,
+					"card_dimensions_mm": "73x123",
+					"instruction_language": "English"
+				},
+				"tags": ["modern", "intuitive", "boho"],
+				"available": true
+			},
+			{
+				"id": "tarot-003",
+				"name": "Thoth Tarot (Aleister Crowley)",
+				"author": "Aleister Crowley & Lady Frieda Harris",
+				"price": 119.0,
+				"category": "Esoteric",
+				"stock": 6,
+				"description": "A deeply hermetic and occult deck, rich in astrological, alchemical and Kabbalistic symbolism. Suitable for advanced users.",
+				"specification": {
+					"cards_count": 78,
+					"card_dimensions_mm": "70x110",
+					"instruction_language": "Polish"
+				},
+				"tags": ["crowley", "occult", "advanced"],
+				"available": true
+			},
+			{
+				"id": "tarot-004",
+				"name": "Dark Necronomicon Tarot",
+				"author": "Donald Tyson",
+				"price": 149.99,
+				"category": "Collector",
+				"stock": 0,
+				"description": "A deck inspired by the Cthulhu mythos and the works of H.P. Lovecraft. Intended for shadow work.",
+				"specification": {
+					"cards_count": 78,
+					"card_dimensions_mm": "80x130",
+					"instruction_language": "English"
+				},
+				"tags": ["dark", "lovecraft", "limited"],
+				"available": false
+			}
+		]
+	}
+}
