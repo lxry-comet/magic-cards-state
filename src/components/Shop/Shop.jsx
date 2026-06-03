@@ -8,11 +8,9 @@ import {
 	ShopList
 } from './Shop.styled.jsx'
 
-export default function Shop({ items = [] }) {
-	const handleAddToCart = item => {
-		console.log('Added to cart:', item.name, 'Price:', item.price)
-		// Logic for adding product to cart
-	}
+export default function Shop({ items = [], selectedItems = [], onToggleCart }) {
+	const isSelected = itemId =>
+		selectedItems.some(selectedItem => selectedItem.id === itemId)
 
 	if (!items || items.length === 0) {
 		return <ShopItemText>No items in shop</ShopItemText>
@@ -49,13 +47,10 @@ export default function Shop({ items = [] }) {
 									</span>
 								</p>
 							</div>
+							<AddToCartButton onClick={() => onToggleCart?.(item)}>
+								{isSelected(item.id) ? 'Delete from Cart' : 'Add to Cart'}
+							</AddToCartButton>
 						</div>
-						<AddToCartButton
-							onClick={() => handleAddToCart(item)}
-							disabled={item.stock <= 0}
-						>
-							Add to Cart
-						</AddToCartButton>
 					</ShopItemContainer>
 				</ShopItem>
 			))}
@@ -64,5 +59,7 @@ export default function Shop({ items = [] }) {
 }
 
 Shop.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.object)
+	items: PropTypes.arrayOf(PropTypes.object),
+	selectedItems: PropTypes.arrayOf(PropTypes.object),
+	onToggleCart: PropTypes.func
 }

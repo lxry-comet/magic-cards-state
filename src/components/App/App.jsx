@@ -6,20 +6,24 @@ import shop from '../../json/shop.json'
 import taro from '../../json/taro.json'
 import { Filter } from '../Filter/Filter.jsx'
 import Shop from '../Shop/Shop.jsx'
+import { ShopItemText } from '../Shop/Shop.styled.jsx'
 import TaroList from '../TaroList/TaroList.jsx'
 
 export class App extends Component {
 	state = {
 		taroSuit: taro,
 		bgColor: 'white',
-		isShop: false
+		isShop: false,
+		currentView: 'taro',
+		cartItems: []
 	}
 	allFiltration = () => {
 		console.log('all')
 
 		this.setState({
 			taroSuit: taro,
-			isShop: false
+			isShop: false,
+			currentView: 'taro'
 		})
 		console.log('taro', taro)
 	}
@@ -66,22 +70,45 @@ export class App extends Component {
 		this.setState({
 			taroSuit: shopProducts,
 			isShop: true,
+			currentView: 'shop',
 			activeButton: 'cartButton',
 			bgColor: '#ff991c91'
 		})
 	}
+
+	toggleCartItem = selectedItem => {
+		this.setState(prevState => {
+			const isAlreadyInCart = prevState.cartItems.some(
+				item => item.id === selectedItem.id
+			)
+			return {
+				cartItems: isAlreadyInCart
+					? prevState.cartItems.filter(item => item.id !== selectedItem.id)
+					: [...prevState.cartItems, selectedItem]
+			}
+		})
+	}
+
 	cartFiltration = () => {
 		console.log('Cart')
-		// console.log('Selected Models: ', selectedModels);
-
 		this.setState({
-			// aircraftsArray: selectedModels,
+			isShop: false,
+			currentView: 'cart',
 			aircraftTitle: 'Cart',
 			activeButton: 'cartButton',
 			bgColor: '#ff991c91'
 		})
 	}
+
 	render() {
+		const { currentView, taroSuit, cartItems } = this.state
+		const sectionTitle =
+			currentView === 'shop'
+				? 'Shop'
+				: currentView === 'cart'
+					? 'Cart'
+					: 'Tarot Cards Collection'
+
 		return (
 			<>
 				<Filter
@@ -94,11 +121,25 @@ export class App extends Component {
 					shopFiltration={this.shopFiltration}
 					cartFiltration={this.cartFiltration}
 				/>
-				<Section title={this.state.isShop ? 'Shop' : 'Tarot Cards Collection'}>
-					{this.state.isShop ? (
-						<Shop items={this.state.taroSuit} />
+				<Section title={sectionTitle}>
+					{currentView === 'shop' ? (
+						<Shop
+							items={taroSuit}
+							selectedItems={cartItems}
+							onToggleCart={this.toggleCartItem}
+						/>
+					) : currentView === 'cart' ? (
+						cartItems.length > 0 ? (
+							<Shop
+								items={cartItems}
+								selectedItems={cartItems}
+								onToggleCart={this.toggleCartItem}
+							/>
+						) : (
+							<ShopItemText>Not added yet</ShopItemText>
+						)
 					) : (
-						<TaroList items={this.state.taroSuit} />
+						<TaroList items={taroSuit} />
 					)}
 				</Section>
 			</>

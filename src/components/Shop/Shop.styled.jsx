@@ -45,26 +45,30 @@ export const ShopItemContainer = styled.div`
 
 export const AddToCartButton = styled.button`
 	margin-top: 20px;
-	padding: 12px 24px;
-	background-color: transparent;
-	color: #d4af37;
-	border: 1px solid #d4af37;
-	border-radius: 4px;
+	padding: 14px 28px;
+	background: rgba(212, 175, 55, 0.08);
+	color: #f7e2a7;
+	border: 1px solid rgba(212, 175, 55, 0.6);
+	border-radius: 12px;
 	cursor: pointer;
 	font-family: 'Georgia, serif';
 	font-size: 14px;
-	letter-spacing: 2px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
 	text-transform: uppercase;
-	transition: all 0.3s ease;
-	box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-	width: 100%;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease,
+		background 0.2s ease;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+	align-self: flex-start;
 
 	&:hover {
-		background-color: rgba(212, 175, 55, 0.1);
-		box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+		background: rgba(212, 175, 55, 0.18);
+		box-shadow: 0 14px 30px rgba(212, 175, 55, 0.25);
 	}
 
 	&:active {
-		transform: scale(0.98);
+		transform: translateY(1px) scale(0.98);
 	}
 `
